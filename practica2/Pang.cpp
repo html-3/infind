@@ -53,9 +53,9 @@ void init() {
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-    //if (key == 'w') player.movement(0.0, 0.01);
+    if (key == 'w') player.movement(0.0, 0.01);
     if (key == 'a') player.movement(-0.1, 0.0);
-    //if (key == 's') player.movement(0.0, -0.01);
+    if (key == 's') player.movement(0.0, -0.01);
     if (key == 'd') player.movement(0.1, 0.0);
 
     if (key == 'r') player.setColor(255, 0, 0);
