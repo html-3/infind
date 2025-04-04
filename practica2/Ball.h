@@ -18,7 +18,7 @@ public:
 	void setColor(unsigned char r, unsigned char v, unsigned char a);
 	void setInitialState(double p_x, double p_y, double v_x, double v_y);
 	void updateState();
-	void render();
+	void render() const;
 	void worldCollision(double world_height, double world_width);
 	void worldGravity(double world_gravity);
 };

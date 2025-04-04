@@ -17,7 +17,7 @@ void World::setColor(unsigned char r, unsigned char v, unsigned char a) {
 	green = a;
 }
 
-void World::render() {
+void World::render() const {
 	glColor3f(red, green, blue);
 	glBegin(GL_QUADS);
 	glVertex2f(-width / 2, -height / 2);

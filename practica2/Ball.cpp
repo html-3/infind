@@ -19,7 +19,7 @@ void Ball::setInitialState(double p_x, double p_y, double v_x, double v_y) {
     vel_y = v_y;
 }
 
-void Ball::render() {
+void Ball::render() const {
     glColor3ub(red, green, blue);
     glPushMatrix();
     glTranslated(pos_x, pos_y, 0);
@@ -42,27 +42,25 @@ void Ball::worldCollision(double world_height, double world_width) {
     double left_wall = -world_width / 2 + radius;
     double right_wall = world_width / 2 - radius;
 
-    // Bottom collision (Ground)
+    // Bottom collision
     if (pos_y <= floor) {
-        pos_y = floor;  // Snap to ground
-        vel_y *= -bounce;  // Reduce bounce energy (tunable)
-
-        if (fabs(vel_y) < 0.01) vel_y = 0;  // Stop tiny bounces
+        pos_y = floor;  // Snap to floor
+        vel_y *= -bounce;  // Energy lost and direction inversion
     }
 
-    // Top collision (Ceiling)
+    // Top collision 
     if (pos_y >= ceiling) {
         pos_y = ceiling;
-        vel_y *= -bounce; // Reverse velocity
+        vel_y *= -bounce; // Energy lost and direction inversion
     }
 
-    // Left collision (Wall)
+    // Left collision
     if (pos_x <= left_wall) {
         pos_x = left_wall;
-        vel_x *= -bounce;  // Reduce energy on bounce
+        vel_x *= -bounce;  // Energy lost and direction inversion
     }
 
-    // Right collision (Wall)
+    // Right collision
     if (pos_x >= right_wall) {
         pos_x = right_wall;
         vel_x *= -bounce;
@@ -70,5 +68,5 @@ void Ball::worldCollision(double world_height, double world_width) {
 }
 
 void Ball::worldGravity(double world_gravity) {
-    acc_y = -world_gravity; // Constant downward acceleration
+    acc_y = -world_gravity;
 }

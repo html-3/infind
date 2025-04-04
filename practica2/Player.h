@@ -17,7 +17,7 @@ public:
 	void setRadius(double r);
 	void setColor(unsigned char r, unsigned char v, unsigned char a);
 	void updateState();
-	void render();
+	void render() const ;
 	void movement(double a_x, double a_y);
 	void worldCollision(double world_height, double world_width);
 	void worldGravity(double world_gravity);

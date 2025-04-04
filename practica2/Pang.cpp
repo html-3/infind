@@ -54,9 +54,9 @@ void init() {
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
     //if (key == 'w') player.movement(0.0, 0.01);
-    if (key == 'a') player.movement(-0.005, 0.0);
+    if (key == 'a') player.movement(-0.1, 0.0);
     //if (key == 's') player.movement(0.0, -0.01);
-    if (key == 'd') player.movement(0.005, 0.0);
+    if (key == 'd') player.movement(0.1, 0.0);
 
     if (key == 'r') player.setColor(255, 0, 0);
     if (key == 'g') player.setColor(0, 255, 0);
@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     
-    glutCreateWindow("Mi Juego");
+    glutCreateWindow("Pang");
 
     world.setSize(0.6, 1.0);
     world.setColor(50, 50, 50);
@@ -82,7 +82,7 @@ int main(int argc, char** argv) {
     ball1.setColor(50, 50, 100);
     ball2.setColor(50, 50, 100);
     ball1.setInitialState(0.2, 0.2, 0.02, 0.01);
-    ball2.setInitialState(-0.2, 0.2, -0.02, 0.01);
+    ball2.setInitialState(-0.3, 0.1, -0.02, 0.01);
 
     init();
     glutDisplayFunc(display);
