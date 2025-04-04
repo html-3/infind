@@ -1,0 +1,6 @@
+class Shot
+{
+public:
+
+};
+
